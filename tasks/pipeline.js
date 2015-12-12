@@ -33,9 +33,7 @@ var jsFilesToInject = [
   'js/dependencies/**/*.js',
 
   'components/jquery/dist/jquery.min.js',
-
   'components/foundation/js/foundation.min.js',
-
   'components/angular/angular.min.js',
   'components/angular-route/angular-route.min.js',
 
