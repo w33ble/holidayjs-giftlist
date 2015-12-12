@@ -7,7 +7,7 @@ module.exports = {
 
 		} else {
 			console.log(req.session.me + ' is logged in');
-			return res.view('jamboree');	
+			return res.view('home');	
 		}
 	},
 
