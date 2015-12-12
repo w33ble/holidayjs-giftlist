@@ -1,13 +1,5 @@
-angular.module('HomeMod').controller('DashCtrl',['$scope', '$http', function($scope, $http){
-	$scope.getUser = function() {
-		console.log('Getting user... ');
+angular.module('giftList').controller('HomeCtrl', HomeCtrl);
 
-		$http.get('/getuser')
-		.then(function onSuccess(user){
-			$scope.user = user.data;
-		})
-		.catch(function onError(error){
-			console.log(error);
-		})
-	}
-}])
+function HomeCtrl () {
+  var vm = this;
+}
