@@ -1,9 +1,26 @@
 module.exports = {
 
-	createList: function(res, req){
+	viewLists: function(req, res) {
+		List.find({
+
+		}, function listsViewable(err, lists){
+		if(err){
+			console.log('Error: '+err);
+			return res.negotiate(err);
+		}
+
+		//SESSION VAR
+
+		console.log('Lists');
+
+		return res.json(lists);
+	})
+},
+
+	createList: function(req, res){
 		List.create({
-			title: "hello",
-			createdBy: req.session.me
+			title: req.param('title'),
+			createdBy: req.session.me,
 	}, function listCreated(err, newList){
 		if(err){
 			console.log('Error: '+err);
@@ -19,6 +36,27 @@ module.exports = {
 		});
 	})
 },
+
+	createItem: function(req, res){
+		Item.create({
+			title: req.param('title'),
+			createdBy: req.session.me,
+			listId: req.param('listId')
+		}, function itemCreated(err, newList){
+		if(err){
+			console.log('Error: '+err);
+			return res.negotiate(err);
+		}
+
+		//SESSION VAR
+
+		console.log('Item Added');
+
+		return res.json({
+			id: newItem.id
+		});
+	})
+	},
 
 	checkUser: function(req, res){
 		if (!req.session.me) {

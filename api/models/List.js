@@ -8,6 +8,9 @@
 module.exports = {
 
   attributes: {
+    title: {
+      type: 'string'
+    },
   	createdBy: {
   		type:'string'
   	},
