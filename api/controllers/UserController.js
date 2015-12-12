@@ -43,7 +43,7 @@ module.exports = {
 
 							//SESSION VAR
 							console.log('User Added', newUser.id);
-							return res.redirect('/home');
+							return res.redirect('/#/home');
 						})
 					}
 				})
