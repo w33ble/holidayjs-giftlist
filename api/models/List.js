@@ -9,13 +9,15 @@ module.exports = {
 
   attributes: {
     title: {
-      type: 'string'
+      type: 'string',
+      required: true
     },
   	createdBy: {
-  		type:'string'
+  		type:'string',
+      required: true
   	},
   	items:{
-  		type:'json'
+  		type: 'json'
   	}
   }
 };

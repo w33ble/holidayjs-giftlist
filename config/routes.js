@@ -44,11 +44,11 @@ module.exports.routes = {
 
   'GET /home': { view:'homepage' },
 
-  'GET /list/add': 'HomeController.createList',
   'GET /list/item/add': 'HomeController.createItem',
 
   'GET /lists': 'ListController.myLists',
   'GET /lists/:id': 'ListController.userLists',
+  'POST /list/add': 'ListController.createList',
 
   'GET /users': 'UserController.listUsers',
   // 'GET /items': { view: 'user_lists' },
