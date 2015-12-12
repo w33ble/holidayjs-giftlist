@@ -42,12 +42,8 @@ module.exports = {
 							}
 
 							//SESSION VAR
-
-							console.log('User Added');
-
-							return res.json({
-								id: newUser.id
-							});
+							console.log('User Added', newUser.id);
+							return res.redirect('/home');
 						})
 					}
 				})
@@ -55,7 +51,6 @@ module.exports = {
 		})
 	},
 	login: function(req, res){
-		console.log('test');
 		// Validate User
 		User.findOne({
 			email: req.param('email')
@@ -64,7 +59,8 @@ module.exports = {
 				return res.negotiate(err);
 			}
 			if(!user){
-				return res.notFound();
+				// return res.notFound();
+				return res.redirect('/login');
 			}
 
 			require('machinepack-passwords').checkPassword({
@@ -81,7 +77,7 @@ module.exports = {
 				},
 				success: function(){
 					req.session.me = user.id;
-					
+
 					console.log('SUCCESS');
 					return res.ok();
 				}
