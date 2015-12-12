@@ -8,7 +8,7 @@ angular.module('LoginMod').controller('LoginCtrl',['$scope', '$http', function($
 			password: $scope.password
 		}).then(function onSuccess(){
 			console.log('login passed');
-			window.location = '/dashboard'
+			window.location = '/home'
 		}).catch(function onError(err){
 			if(err.status == 400 || 404){
 				toastr.error('Invalid credentials', 'Error', {
