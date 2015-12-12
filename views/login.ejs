@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!--STYLES-->
+    <link rel="stylesheet" href="/styles/importer.css">
+    <link rel="stylesheet" href="/components/foundation/css/foundation.min.css">
+    <!--STYLES END-->
+    <link rel="stylesheet" href="/styles/login.css">
+  </head>
+  <body ng-app="LoginMod" ng-controller="LoginCtrl">
+
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">Math Reactor</a>
+            </div>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="/signup">Sign up</a></li>
+            </ul>
+        </div>  
+    </nav>
+    
+    <div class="container">
+
+      <form class="form-signin" ng-submit="runLogin()">
+        <h2>Log in</h2>
+        <label for="inputEmail" class="sr-only">Email address</label>
+        <input ng-model="email" type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+        <label for="inputPassword" class="sr-only">Password</label>
+        <input ng-model="password" type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+        <button class="btn btn-lg btn-primary btn-block" type="submit" value="Log In">Sign in</button>
+      </form>
+
+    </div> <!-- /container -->
+<!--     <div>Login</div>
+    <form ng-submit="runLogin()">
+      <label>Email</label>
+      <input ng-model="email" type="email" name="email" placeholder="Email Address" required />
+      <label>Password</label>
+      <input ng-model="password" type="password" name="password" placeholder="Password" required />
+      <input type="submit" class="button expand" value="Log In"/>
+    </form> -->
+  <!--SCRIPTS-->
+  <script src="/js/dependencies/sails.io.js"></script>
+  <script src="/js/login/LoginCtrl.js"></script>
+  <script src="/js/login/LoginMod.js"></script>
+  <script src="/components/jquery/dist/jquery.min.js"></script>
+  <script src="/components/angular/angular.min.js"></script>
+  <script src="/components/foundation/js/foundation.min.js"></script>
+  <!--SCRIPTS END-->
+  </body>
+</html>
