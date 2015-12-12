@@ -90,14 +90,13 @@ module.exports = {
 			if(err){
 				return res.negotiate(err);
 			}
-			if(!user){
-				return res.notFound();
+
+			if(user){
+				req.session.me = null;
 			}
 
-			req.session.me = null;
-
 			return res.redirect('/');
-		})
+		});
 	}
 };
 

@@ -1,5 +1,10 @@
 module.exports = {
 
+	index: function (req, res) {
+		if (!req.session.me) return res.redirect('/login');
+		return res.view('homepage');
+	},
+
 	viewLists: function(req, res) {
 		List.find({
 
@@ -43,19 +48,19 @@ module.exports = {
 			createdBy: req.session.me,
 			listId: req.param('listId')
 		}, function itemCreated(err, newList){
-		if(err){
-			console.log('Error: '+err);
-			return res.negotiate(err);
-		}
+			if(err){
+				console.log('Error: '+err);
+				return res.negotiate(err);
+			}
 
-		//SESSION VAR
+			//SESSION VAR
 
-		console.log('Item Added');
+			console.log('Item Added');
 
-		return res.json({
-			id: newItem.id
+			return res.json({
+				id: newItem.id
+			});
 		});
-	})
 	},
 
 	checkUser: function(req, res){
@@ -65,7 +70,7 @@ module.exports = {
 
 		} else {
 			console.log(req.session.me + ' is logged in');
-			return res.view('home');	
+			return res.view('home');
 		}
 	},
 
