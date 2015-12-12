@@ -19,34 +19,17 @@
  * http://sailsjs.org/#!/documentation/reference/sails.config/sails.config.connections.html
  */
 
+var url = require('url');
+var prodMongoParams = url.parse(process.env.MONGOLAB_URI);
+var prodMongo = {
+  user: prodMongoParams.auth.split(':')[0],
+  password: prodMongoParams.auth.split(':')[1],
+  port: prodMongoParams.port,
+  host: prodMongoParams.hostname,
+  database: prodMongoParams.pathname.substring(1),
+};
+
 module.exports.connections = {
-
-  /***************************************************************************
-  *                                                                          *
-  * Local disk storage for DEVELOPMENT ONLY                                  *
-  *                                                                          *
-  * Installed by default.                                                    *
-  *                                                                          *
-  ***************************************************************************/
-  localDiskDb: {
-    adapter: 'sails-disk'
-  },
-
-  /***************************************************************************
-  *                                                                          *
-  * MySQL is the world's most popular relational database.                   *
-  * http://en.wikipedia.org/wiki/MySQL                                       *
-  *                                                                          *
-  * Run: npm install sails-mysql                                             *
-  *                                                                          *
-  ***************************************************************************/
-  someMysqlServer: {
-    adapter: 'sails-mysql',
-    host: 'YOUR_MYSQL_SERVER_HOSTNAME_OR_IP_ADDRESS',
-    user: 'YOUR_MYSQL_USER',
-    password: 'YOUR_MYSQL_PASSWORD',
-    database: 'YOUR_MYSQL_DB'
-  },
 
   /***************************************************************************
   *                                                                          *
@@ -56,32 +39,16 @@ module.exports.connections = {
   * Run: npm install sails-mongo                                             *
   *                                                                          *
   ***************************************************************************/
-  someMongodbServer: {
+  devMongodbServer: {
     adapter: 'sails-mongo',
     host: 'localhost',
     port: 27017,
     // user: 'username',
     // password: 'password',
-    // database: 'your_mongo_db_name_here'
+    database: 'giftlist'
   },
 
-  /***************************************************************************
-  *                                                                          *
-  * PostgreSQL is another officially supported relational database.          *
-  * http://en.wikipedia.org/wiki/PostgreSQL                                  *
-  *                                                                          *
-  * Run: npm install sails-postgresql                                        *
-  *                                                                          *
-  *                                                                          *
-  ***************************************************************************/
-  somePostgresqlServer: {
-    adapter: 'sails-postgresql',
-    host: 'YOUR_POSTGRES_SERVER_HOSTNAME_OR_IP_ADDRESS',
-    user: 'YOUR_POSTGRES_USER',
-    password: 'YOUR_POSTGRES_PASSWORD',
-    database: 'YOUR_POSTGRES_DB'
-  }
-
+  prodMysqlServer: Object.assign({ adapter: 'sails-mongo' }, prodMongo)
 
   /***************************************************************************
   *                                                                          *
