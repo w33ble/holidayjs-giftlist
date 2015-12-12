@@ -18,5 +18,5 @@ angular.module('SignupMod').controller('SignupCtrl',['$scope', '$http', function
 		.catch(function onError(err){
 			console.log('Error: ',err);
 		})
-	}
-}])
+	})
+}}])

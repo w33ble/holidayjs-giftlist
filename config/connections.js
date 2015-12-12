@@ -21,13 +21,15 @@
 
 var url = require('url');
 var _ = require('lodash');
-var prodMongoParams = url.parse(process.env.MONGOLAB_URI);
-var prodMongo = {
-  user: prodMongoParams.auth.split(':')[0],
-  password: prodMongoParams.auth.split(':')[1],
-  port: prodMongoParams.port,
-  host: prodMongoParams.hostname,
-  database: prodMongoParams.pathname.substring(1),
+if (process.env.MONGOLAB_URI) {
+  var prodMongoParams = url.parse(process.env.MONGOLAB_URI);
+  var prodMongo = {
+    user: prodMongoParams.auth.split(':')[0],
+    password: prodMongoParams.auth.split(':')[1],
+    port: prodMongoParams.port,
+    host: prodMongoParams.hostname,
+    database: prodMongoParams.pathname.substring(1),
+  };
 };
 
 module.exports.connections = {
@@ -42,11 +44,11 @@ module.exports.connections = {
   ***************************************************************************/
   devMongodbServer: {
     adapter: 'sails-mongo',
-    host: 'localhost',
-    port: 27017,
-    // user: 'username',
-    // password: 'password',
-    database: 'giftlist'
+    host: 'ds027825.mongolab.com',
+    port: 27825,
+    user: 'holiday',
+    password: 'N0tSecure',
+    database: 'heroku_d5kr40qg'
   },
 
   prodMysqlServer: _.assign({ adapter: 'sails-mongo' }, prodMongo)
