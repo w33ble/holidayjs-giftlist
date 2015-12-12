@@ -1,22 +1,9 @@
-angular.module('SignupMod').controller('SignupCtrl',['$scope', '$http', function($scope, $http){
-	console.log('Signup Controller initialized...');
+angular.module('giftList').controller('SignupCtrl', SignupCtrl);
 
-	$scope.runSignup = function(){
-		console.log('Signing Up '+$scope.email);
+function SignupCtrl () {
+  var vm = this;
 
-		// Submit To Sails Server
-		$http.post('/signup', {
-			email: $scope.email,
-			password: $scope.password
-		})
-		.then(function onSuccess(response){
-			window.location = '/home'
-			$http.put('/login', {
-				email: $scope.email,
-				password: $scope.password
-		})
-		.catch(function onError(err){
-			console.log('Error: ',err);
-		})
-	}
-}])
+  vm.unSignup = function(){
+    console.log('Signing Up ');
+  }
+}
