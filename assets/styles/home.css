@@ -12,6 +12,14 @@
   padding: 20px;
 }
 
+.primary-nav a:visited {
+  color: white;
+}
+
+.primary-nav a:hover {
+  color: white;
+}
+
 .primary-nav a {
   display: inline-block;
   color: white;
@@ -36,4 +44,26 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+.media-object {
+  overflow: hidden;
+}
+
+.media-object img {
+  width: 200px;
+  height: 200px;
+  float: left;
+}
+
+.media-object > div {
+  margin-left: 270px;
+}
+
+.media-object a {
+  color: #6CA1FF;
+  font-size: 25pt;
+  font-family: Lobster;
+  text-decoration: none;
+  display: block;
 }
