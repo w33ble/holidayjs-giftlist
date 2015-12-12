@@ -1,0 +1,39 @@
+.panel-div {
+  background-color: #F3F3F3;
+}
+
+.panel-div > div {
+  width: 960px;
+  margin: 0 auto;
+}
+
+.primary-nav {
+  font-size: 13pt;
+  padding: 20px;
+}
+
+.primary-nav a {
+  display: inline-block;
+  color: white;
+  text-decoration: none;
+  padding: 15px;
+  margin: 0 10px;
+  border-bottom: 1px solid white;
+}
+
+.hero {
+  background-image: radial-gradient(rgba(35, 35, 35, 0.25), rgba(35, 35, 35, 0.25)), url('http://www.psdgraphics.com/file/abstract-holiday-background.jpg');
+  min-height: 300px;
+  position: relative;
+}
+
+.banner {
+  color: white;
+  font-family: Raleway;
+  font-weight: 500;
+  font-size: 40pt;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

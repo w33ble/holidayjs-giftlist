@@ -1,0 +1,39 @@
+.user-bg {
+  background-image: radial-gradient(rgba(35, 35, 35, 0.15), rgba(35, 35, 35, 0.15)), url('http://www.imgion.com/images/01/Winter-Season-With-Happy-Holiday-.jpg');
+  background-size: cover;
+  background-size: no-repeat;
+  background-position: center center;
+  min-height: 170px;
+  text-align: center;
+  padding: 1px;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+}
+
+.user-name {
+  font-family: Lobster;
+  font-size: 18pt;
+  color: white;
+  margin-top: 36%;
+}
+
+.list-type-container {
+  border-top: 2px solid black;
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+  background-image: url('http://corrupteddevelopment.com/wp-content/uploads/2011/11/snowflake-texture.jpg');
+  background-size: cover;
+  background-size: no-repeat;
+  background-position: center center;
+  min-height: 100px;
+  text-align: center;
+  padding: 8px;
+}
+
+.list-type-item {
+  padding: 2px;
+  font-family: Lobster;
+  font-size: 14pt;
+  display: block;
+  color: #1D99F7;
+}
