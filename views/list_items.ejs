@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<!--[if IE 9]><html class="lt-ie10" lang="en" > <![endif]-->
+<html class="no-js" lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Foundation 5</title>
+
+  <link rel="stylesheet" href="/components/foundation/css/foundation.min.css">
+  <link rel="stylesheet" href="/components/normalize-css/normalize.css">
+</head>
+
+<body>
+  <div class="row">
+    <div class="large-12 columns">
+      <div class="large-6 columns">
+        Description:
+      </div>
+      <div class="large-6 columns">
+        Retailer/Link:
+      </div>
+    </div>
+  </div>
+
+  <% for(var i=0; i<2; i++) {%>
+    <div class="row">
+      <div class="large-12 columns">
+        <div class="large-6 columns">
+          Item description goes here
+        </div>
+        <div class="large-6 columns">
+          Purchasing info goes here
+        </div>
+      </div>
+    </div>
+  <% } %>
+
+  <div class="row">
+    <fieldset>
+      <legend>Update Item:</legend>
+      <div class="large-6 columns">
+        Description: <input type="text">
+      </div>
+      <div class="large-4 columns">
+        Retailer/Link: <input type="text">
+      </div>
+      <div class="large-2 columns">
+        <br>
+        <button class="button tiny">Save</button>
+        <button class="button secondary tiny">Cancel</button>
+      </div>
+    </fieldset>
+  </div>
+
+  <% for(var i=0; i<10; i++) {%>
+    <div class="row">
+      <div class="large-12 columns">
+        <div class="large-6 columns">
+          Item description goes here
+        </div>
+        <div class="large-6 columns">
+          Purchasing info goes here
+        </div>
+      </div>
+    </div>
+  <% } %>
+
+  <div class="row">
+    <fieldset>
+      <legend>Add New Item:</legend>
+      <div class="large-6 columns">
+        Description: <input type="text">
+      </div>
+      <div class="large-4 columns">
+        Retailer/Link: <input type="text">
+      </div>
+      <div class="large-2 columns">
+        <br>
+        <button class="button tiny">Add</button>
+      </div>
+    </fieldset>
+  </div>
+
+</body>
