@@ -20,6 +20,7 @@
  */
 
 var url = require('url');
+var _ = require('lodash');
 var prodMongoParams = url.parse(process.env.MONGOLAB_URI);
 var prodMongo = {
   user: prodMongoParams.auth.split(':')[0],
@@ -48,7 +49,7 @@ module.exports.connections = {
     database: 'giftlist'
   },
 
-  prodMysqlServer: Object.assign({ adapter: 'sails-mongo' }, prodMongo)
+  prodMysqlServer: _.assign({ adapter: 'sails-mongo' }, prodMongo)
 
   /***************************************************************************
   *                                                                          *
