@@ -50,6 +50,9 @@ module.exports.routes = {
   'GET /lists': 'ListController.myLists',
   'GET /lists/:id': 'ListController.userLists',
 
+  'GET /users': 'UserController.listUsers',
+  // 'GET /items': { view: 'user_lists' },
+
   /***************************************************************************
   *                                                                          *
   * Custom routes here...                                                    *

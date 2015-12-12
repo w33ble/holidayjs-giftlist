@@ -97,6 +97,15 @@ module.exports = {
 
 			return res.redirect('/');
 		});
+	},
+
+	listUsers: function (req, res) {
+    if (!req.session.me) return res.badRequest();
+
+		User.find({}, function (err, users) {
+			if (err) return res.notFound();
+			res.json(users);
+		});
 	}
 };
 
