@@ -8,7 +8,7 @@
     <!--STYLES END-->
     <link rel="stylesheet" href="/styles/login.css">
   </head>
-  <body ng-app="LoginMod" ng-controller="LoginCtrl">
+  <body>
 
     <nav class="navbar navbar-default">
         <div class="container-fluid">
@@ -18,17 +18,17 @@
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="/signup">Sign up</a></li>
             </ul>
-        </div>  
+        </div>
     </nav>
-    
+
     <div class="container">
 
-      <form class="form-signin" ng-submit="runLogin()">
+      <form class="form-signin" action="/login" method="post">
         <h2>Log in</h2>
         <label for="inputEmail" class="sr-only">Email address</label>
-        <input ng-model="email" type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+        <input type="email" name="email" class="form-control" placeholder="Email address" required autofocus>
         <label for="inputPassword" class="sr-only">Password</label>
-        <input ng-model="password" type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+        <input type="password" name="password" class="form-control" placeholder="Password" required>
         <button class="btn btn-lg btn-primary btn-block" type="submit" value="Log In">Sign in</button>
       </form>
 
@@ -44,12 +44,14 @@
   <!--SCRIPTS-->
   <script src="/js/dependencies/sails.io.js"></script>
   <script src="/components/jquery/dist/jquery.min.js"></script>
-  <script src="/components/angular/angular.js"></script>
   <script src="/components/foundation/js/foundation.min.js"></script>
-  <script src="/js/public/signup/SignupMod.js"></script>
-  <script src="/js/public/signup/SignupCtrl.js"></script>
-  <script src="/js/public/login/LoginMod.js"></script>
+  <script src="/components/angular/angular.min.js"></script>
+  <script src="/components/angular-route/angular-route.min.js"></script>
+  <script src="/js/public/MainCtrl.js"></script>
   <script src="/js/public/login/LoginCtrl.js"></script>
+  <script src="/js/public/login/LoginMod.js"></script>
+  <script src="/js/public/signup/SignupCtrl.js"></script>
+  <script src="/js/public/signup/SignupMod.js"></script>
   <!--SCRIPTS END-->
   </body>
 </html>

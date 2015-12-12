@@ -7,7 +7,7 @@ angular.module('giftList', ['ngRoute'])
     controller: 'LoginCtrl',
     controllerAs: 'vm'
   })
- .when('/home', {
+  .when('/home', {
     templateUrl: '/views/home.html',
     controller: 'HomeCtrl',
     controllerAs: 'vm'
