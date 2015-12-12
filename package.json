@@ -30,6 +30,9 @@
     "postinstall": "bower install"
   },
   "main": "app.js",
+  "engines": {
+    "node": "~0.12.9"
+  },
   "repository": {
     "type": "git",
     "url": "git://github.com/w33ble/giftlist.git"
