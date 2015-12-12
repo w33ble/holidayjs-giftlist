@@ -50,7 +50,7 @@ module.exports.connections = {
   * Run: npm install sails-mongo                                             *
   *                                                                          *
   ***************************************************************************/
-  devMysqlServer: Object.assign({ adapter: 'sails-mongo' }, mongoConf)
+  devMysqlServer: Object.assign({ adapter: 'sails-mongo' }, mongoConf),
   prodMysqlServer: Object.assign({ adapter: 'sails-mongo' }, mongoConf)
 
   /***************************************************************************
