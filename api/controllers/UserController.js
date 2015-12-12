@@ -79,7 +79,7 @@ module.exports = {
 					req.session.me = user.id;
 
 					console.log('SUCCESS');
-					return res.ok();
+					return res.redirect('/#/home');
 				}
 			})
 		})

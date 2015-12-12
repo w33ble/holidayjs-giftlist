@@ -14,15 +14,15 @@
 
     <div class="content">
       <ul class="tabs" data-tab>
-        <li class="tab-title"><a href="#panel1">You</a></li>
-        <li class="tab-title active"><a href="#panel2">Users</a></li>
+        <li class="tab-title" ng-class="{active: vm.panel1Active}"><a ng-click="vm.panel1Active = true; vm.panel2Active = false">You</a></li>
+        <li class="tab-title" ng-class="{active: vm.panel2Active}"><a ng-click="vm.panel2Active = true; vm.panel1Active = false">Users</a></li>
       </ul>
 
       <div class="tabs-content">
-        <div class="content" id="panel1">
+        <div class="content" ng-class="{active: vm.panel1Active}" id="panel1">
           <p>This is the first panel of the basic tab example. You can place all sorts of content here including a grid.</p>
         </div>
-        <div class="content active" id="panel2">
+        <div class="content" ng-class="{active: vm.panel2Active}" id="panel2">
           <div class="row">
             <div class="small-3 columns">
               <div>
