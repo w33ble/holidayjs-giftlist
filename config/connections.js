@@ -19,6 +19,17 @@
  * http://sailsjs.org/#!/documentation/reference/sails.config/sails.config.connections.html
  */
 
+var url = require('url');
+var _ = require('lodash');
+var prodMongoParams = url.parse(process.env.MONGOLAB_URI);
+var prodMongo = {
+  user: prodMongoParams.auth.split(':')[0],
+  password: prodMongoParams.auth.split(':')[1],
+  port: prodMongoParams.port,
+  host: prodMongoParams.hostname,
+  database: prodMongoParams.pathname.substring(1),
+};
+
 module.exports.connections = {
 
   /***************************************************************************
@@ -29,12 +40,16 @@ module.exports.connections = {
   * Run: npm install sails-mongo                                             *
   *                                                                          *
   ***************************************************************************/
- myMongo: {
+  devMongodbServer: {
     adapter: 'sails-mongo',
     host: 'localhost',
     port: 27017,
+    // user: 'username',
+    // password: 'password',
     database: 'giftlist'
-  }
+  },
+
+  prodMysqlServer: _.assign({ adapter: 'sails-mongo' }, prodMongo)
 
   /***************************************************************************
   *                                                                          *
