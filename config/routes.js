@@ -38,6 +38,9 @@ module.exports.routes = {
   'PUT /login': 'UserController.login',
   'GET /logout':'UserController.logout',
   'POST /signup': 'UserController.signup',
+  'GET /list/add': 'HomeController.createList',
+  'GET /list/item/add': 'HomeController.createItem',
+  'GET /lists': 'HomeController.viewLists',
   'GET /items': { view: 'user_lists' },
 
   /***************************************************************************
