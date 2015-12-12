@@ -1,0 +1,22 @@
+{
+  "name": "giftlist",
+  "description": "a Sails application",
+  "main": "app.js",
+  "authors": [
+    "frank"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/w33ble/holidayjs-giftlist",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "foundation": "~5.5.3",
+    "angular": "~1.4.8"
+  }
+}
