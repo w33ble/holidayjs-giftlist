@@ -46,8 +46,9 @@ module.exports.routes = {
 
   'GET /list/add': 'HomeController.createList',
   'GET /list/item/add': 'HomeController.createItem',
-  'GET /lists': 'HomeController.viewLists',
-  'GET /items': { view: 'user_lists' },
+
+  'GET /lists': 'ListController.myLists',
+  'GET /lists/:id': 'ListController.userLists',
 
   /***************************************************************************
   *                                                                          *
