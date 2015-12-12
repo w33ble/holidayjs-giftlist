@@ -20,17 +20,25 @@
  */
 
 var url = require('url');
-var _ = require('lodash');
+var conf = {};
 if (process.env.MONGOLAB_URI) {
-  var prodMongoParams = url.parse(process.env.MONGOLAB_URI);
-  var prodMongo = {
-    user: prodMongoParams.auth.split(':')[0],
-    password: prodMongoParams.auth.split(':')[1],
-    port: prodMongoParams.port,
-    host: prodMongoParams.hostname,
-    database: prodMongoParams.pathname.substring(1),
+  var mongoParams = url.parse(process.env.MONGOLAB_URI);
+  conf = {
+    user: mongoParams.auth.split(':')[0],
+    password: mongoParams.auth.split(':')[1],
+    port: mongoParams.port,
+    host: mongoParams.hostname,
+    database: mongoParams.pathname.substring(1),
   };
-};
+}
+
+var mongoConf = Object.assign({
+  host: 'localhost',
+  port: 27017,
+  // user: 'username',
+  // password: 'password',
+  database: 'giftlist'
+}, conf);
 
 module.exports.connections = {
 
@@ -42,16 +50,9 @@ module.exports.connections = {
   * Run: npm install sails-mongo                                             *
   *                                                                          *
   ***************************************************************************/
-  devMongodbServer: {
-    adapter: 'sails-mongo',
-    host: 'ds027825.mongolab.com',
-    port: 27825,
-    user: 'holiday',
-    password: 'N0tSecure',
-    database: 'heroku_d5kr40qg'
-  },
 
-  prodMysqlServer: _.assign({ adapter: 'sails-mongo' }, prodMongo)
+  devMongoServer: Object.assign({ adapter: 'sails-mongo' }, mongoConf),
+  prodMongoServer: Object.assign({ adapter: 'sails-mongo' }, mongoConf)
 
   /***************************************************************************
   *                                                                          *

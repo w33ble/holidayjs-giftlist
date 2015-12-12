@@ -17,10 +17,6 @@ module.exports = {
   		type:'string',
   		required:true
   	},
-    points:{
-      type:'integer',
-      required:true,
-    },
   	lastLoggedIn:{
   		type:'date',
   		required: true,
