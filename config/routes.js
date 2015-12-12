@@ -32,12 +32,18 @@ module.exports.routes = {
   *                                                                          *
   ***************************************************************************/
 
-  'GET /':{ view:'homepage' },
-  'GET /signup':{ view:'signup' },
-  'GET /home':{ view:'homepage' },
-  'PUT /login': 'UserController.login',
+  // 'GET /':{ view:'homepage' },
+  'GET /':{ view:'login' },
+
+  'GET /login':{ view:'login' },
+  'POST /login': 'UserController.login',
   'GET /logout':'UserController.logout',
+
+  'GET /signup':{ view:'signup' },
   'POST /signup': 'UserController.signup',
+
+  'GET /home':{ view:'homepage' },
+
   'GET /list/add': 'HomeController.createList',
   'GET /list/item/add': 'HomeController.createItem',
   'GET /lists': 'HomeController.viewLists',
