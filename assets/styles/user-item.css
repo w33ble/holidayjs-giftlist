@@ -31,6 +31,7 @@
 }
 
 .list-type-item {
+  text-decoration: none;
   padding: 2px;
   font-family: Lobster;
   font-size: 14pt;
