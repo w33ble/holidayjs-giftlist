@@ -23,10 +23,7 @@
           <div class="media-object">
             <img src="https://image-gr.s3.envato.com/files/8679582/361.png" alt="">
             <div>
-              <a href="">List Type</a>
-              <a href="">List Type</a>
-              <a href="">List Type</a>
-              <a href="">List Type</a>
+              <a ng-repeat="listType in vm.lists" href="">{{listType.title}}</a>
             </div>
           </div>
         </div>
@@ -35,10 +32,10 @@
             <div ng-repeat="user in vm.users" class="small-3 columns">
               <div>
                 <div class="user-bg">
-                  <h6 class="user-name">{{user.name}}</h6>
+                  <h6 class="user-name">{{user.email}}</h6>
                 </div>
                 <div class="list-type-container">
-                  <a ng-repeat="listType in user.lists" class="list-type-item" href="">{{listType}}</a>
+                  <a ng-repeat="listType in user.lists" class="list-type-item" href="">{{listType.title}}</a>
                 </div>
               </div>
             </div>
