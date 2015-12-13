@@ -1,3 +1,3 @@
-# giftlist
+# giftlist app
 
 a [Sails](http://sailsjs.org) application
